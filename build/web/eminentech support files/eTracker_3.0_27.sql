@@ -1,0 +1,2 @@
+CREATE OR REPLACE FORCE VIEW  "WRM_UPDATED" ("ISSUEID", "PID", "COMMENTEDBY") AS 
+  SELECT distinct(i.ISSUEID),i.pid,ic.commentedby from issue i,issuecomments ic,issuestatus s,lastwrm l,Apm_wrm_plan ap where to_date(comment_date,'DD-MM-yyyy')>=to_date(l.WRMDAY,'DD-MM-yyyy') and to_date(ap.wrmday,'DD-MM-yyyy')>=to_date(l.WRMDAY,'DD-MM-yyyy') and  i.issueid=ic.issueid and i.pid=l.pid and ap.pid=i.pid and i.issueid=ap.issueid and i.issueid=s.issueid and s.status!='Closed' and ap.status='Active' and ic.comments not like 'Due date is realigned because of issue%'/

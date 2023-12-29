@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 15 May, 2015 10:07:16 AM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+  <class entity-name="Leave" name="com.eminent.leaveUtil.Leave" table="LEAVE">
+    <id name="leaveid" type="long">
+      <column name="LEAVEID"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="approval" type="int">
+      <column name="APPROVAL"/>
+    </property>
+    <property name="approver" type="java.math.BigDecimal">
+      <column name="APPROVER"/>
+    </property>
+    <property name="fromdate" type="java.util.Date">
+      <column name="FROMDATE"/>
+    </property>
+    <property name="todate" type="java.util.Date">
+      <column name="TODATE"/>
+    </property>
+    <property name="type" type="java.lang.String">
+      <column name="TYPE"/>
+    </property>
+    <property name="description" type="java.lang.String">
+      <column name="DESCRIPTION"/>
+    </property>
+    <property name="createdon" type="java.util.Date">
+      <column name="CREATEDON"/>
+    </property>
+    <property name="modifiedon" type="java.util.Date">
+      <column name="MODIFIEDON"/>
+    </property>
+    <property name="comments" type="java.lang.String">
+      <column name="COMMENTS"/>
+    </property>
+    <property name="duration" type="java.lang.String">
+      <column name="DURATION"/>
+    </property>
+    
+    <property name="requestedby" type="java.math.BigDecimal">
+      <column name="REQUESTEDBY"/>
+    </property>
+    <property name="assignedto" type="java.math.BigDecimal">
+      <column name="ASSIGNEDTO"/>
+    </property>
+
+  </class>
+</hibernate-mapping>

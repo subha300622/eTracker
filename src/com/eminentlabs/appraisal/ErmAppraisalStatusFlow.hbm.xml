@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 17, 2011 10:34:45 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.eminentlabs.appraisal.ErmAppraisalStatusFlow" table="ERM_APPRAISAL_STATUS_FLOW" schema="EMINENTTRACKER">
+        <id name="statusFlowId" type="integer">
+            <column name="STATUS_FLOW_ID" precision="22" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <property name="statusMasterId" type="integer">
+            <column name="STATUS_MASTER_ID" precision="22" scale="0" />
+        </property>
+        <property name="statusSubId" type="integer">
+            <column name="STATUS_SUB_ID" precision="22" scale="0" />
+        </property>
+    </class>
+</hibernate-mapping>

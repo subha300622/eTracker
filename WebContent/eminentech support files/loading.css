@@ -1,0 +1,14 @@
+/* 
+    Document   : loading
+    Created on : 30 Aug, 2010, 3:35:40 PM
+    Author     : Tamilvelan
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+
+.hide_me, .slide_in {
+visibility: hidden;
+height: auto;
+}
+

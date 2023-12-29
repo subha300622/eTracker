@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16 Mar, 2010 7:45:06 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping default-lazy="false">
+  <class entity-name="executionplan" name="com.eminent.tqm.TqmTestcaseexecutionplan" schema="EMINENTTRACKER" table="TQM_TESTCASEEXECUTIONPLAN">
+    <id name="tepid" type="int">
+      <column name="TEPID" precision="6" scale="0"/>
+      <generator class="sequence">
+        <param name="sequence">TEPID_SEQ</param>
+      </generator>
+    </id>
+    <property name="planname" type="string">
+      <column length="50" name="PLANNAME"/>
+    </property>
+    <many-to-one column="STATUSID" entity-name="planstatus" fetch="join" name="tqmTestcaseplanstatus"/>
+    <property name="plannedstart" type="date">
+      <column length="7" name="PLANNEDSTART"/>
+    </property>
+    <property name="plannedend" type="date">
+      <column length="7" name="PLANNEDEND"/>
+    </property>
+    <property name="actualstart" type="date">
+      <column length="7" name="ACTUALSTART"/>
+    </property>
+    <property name="actualend" type="date">
+      <column length="7" name="ACTUALEND"/>
+    </property>
+    <property name="pid" type="java.lang.Integer">
+      <column name="PID" precision="6" scale="0"/>
+    </property>
+    <property name="buildno" type="string">
+      <column length="25" name="BUILDNO"/>
+    </property>
+    <property name="mainprocess" type="string">
+      <column length="10" name="MAINPROCESS"/>
+    </property>
+    <property name="subprocess" type="string">
+      <column length="10" name="SUBPROCESS"/>
+    </property>
+    <property name="scenario" type="string">
+      <column length="10" name="SCENARIO"/>
+    </property>
+    <property name="variant" type="string">
+      <column length="10" name="VARIANT"/>
+    </property>
+    <many-to-one column="QUALITYMANAGER" entity-name="users" fetch="join" name="qualitymanager"/>
+    <many-to-one column="CREATEDBY" entity-name="users" fetch="join" name="createdby"/>
+    <property name="createdon" type="timestamp">
+      <column length="11" name="CREATEDON"/>
+    </property>
+    <property name="modifiedon" type="timestamp">
+      <column length="11" name="MODIFIEDON"/>
+    </property>
+    <!--
+   <set inverse="true" name="tqmTestcaseexecutions">
+      <key column="TEPID"/>
+      <one-to-many entity-name="testcaseexecution"/>
+    </set>
+    <set inverse="true" name="tqmModuleplans">
+      <key column="TEPID"/>
+      <one-to-many entity-name="moduleplan"/>
+    </set>
+    -->
+  </class>
+</hibernate-mapping>

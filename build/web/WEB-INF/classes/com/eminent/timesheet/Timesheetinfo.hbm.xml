@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 13, 2009 12:02:39 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class entity-name="sheetinfo" name="com.eminent.timesheet.Timesheetinfo" schema="EMINENTTRACKER" table="TIMESHEETINFO">
+    <id name="infoid" type="long">
+      <column name="INFOID" precision="10" scale="0"/>
+      <generator class="sequence">
+        <param name="sequence">INFOID_SEQ</param>
+      </generator>
+    </id>
+    <many-to-one column="INFOTO" entity-name="users" fetch="select" name="usersByInfoto"/>
+    <many-to-one column="INFOBY" entity-name="users" fetch="select" name="usersByInfoby"/>
+    <many-to-one column="TIMESHEETID" entity-name="usertimesheets" fetch="select" name="timesheet"/>
+    <property name="infoaddedon" type="timestamp">
+      <column name="INFOADDEDON"/>
+    </property>
+    <property name="info" type="string">
+      <column length="2000" name="INFO"/>
+    </property>
+  </class>
+</hibernate-mapping>

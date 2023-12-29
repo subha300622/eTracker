@@ -1,0 +1,4 @@
+alter table MOM_USER_DETAIL drop column momuserid; 
+alter table MOM_USER_DETAIL MODIFY MomDate Date;
+CONSTRAINT "MOM_USER_DETAIL_CON" UNIQUE ("USERID", "MOMDATE", "MOMTIME") ENABLE; 
+alter table "MOM_USER_DETAIL" add ("MOMCOMMENT" VARCHAR2(100) NULL) ;

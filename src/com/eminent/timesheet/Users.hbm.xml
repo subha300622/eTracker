@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 13, 2009 12:02:39 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping default-lazy="false">
+  <class entity-name="users" name="com.eminent.timesheet.Users" schema="EMINENTTRACKER" table="USERS">
+    <id name="userid" type="int">
+      <column name="USERID" precision="22" scale="0"/>
+      <generator class="assigned"/>
+    </id>
+    <many-to-one column="ROLEID" entity-name="userroles" fetch="select" name="role"/>
+    <property name="firstname" type="string">
+      <column length="100" name="FIRSTNAME" not-null="true"/>
+    </property>
+    <property name="lastname" type="string">
+      <column length="100" name="LASTNAME" not-null="true"/>
+    </property>
+    <property name="password" type="string">
+      <column length="240" name="PASSWORD" not-null="true"/>
+    </property>
+    <property name="email" type="string">
+      <column length="100" name="EMAIL" not-null="true" unique="true"/>
+    </property>
+    <property name="company" type="string">
+      <column length="100" name="COMPANY" not-null="true"/>
+    </property>
+    <property name="secret" type="string">
+      <column length="200" name="SECRET" not-null="true"/>
+    </property>
+    <property name="answer" type="string">
+      <column length="80" name="ANSWER" not-null="true"/>
+    </property>
+    <property name="phone" type="string">
+      <column length="100" name="PHONE"/>
+    </property>
+    <property name="mobile" type="string">
+      <column length="100" name="MOBILE" not-null="true"/>
+    </property>
+    <property name="team" type="string">
+      <column length="25" name="TEAM"/>
+    </property>
+    <property name="mobileoperator" type="string">
+      <column length="50" name="MOBILEOPERATOR" not-null="true"/>
+    </property>
+    <property name="value" type="int">
+      <column name="VALUE" precision="22" scale="0"/>
+    </property>
+    <set inverse="true" name="timesheetcommentsesForCommentedby">
+      <key column="INFOBY"/>
+      <one-to-many entity-name="sheetinfo"/>
+    </set>
+    <set inverse="true" name="timesheetcommentsesForCommentedto">
+      <key column="INFOTO"/>
+      <one-to-many entity-name="sheetinfo"/>
+    </set>
+
+  </class>
+</hibernate-mapping>

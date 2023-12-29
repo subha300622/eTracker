@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 17, 2011 10:34:45 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.eminentlabs.appraisal.ErmAppraisalComment" table="ERM_APPRAISAL_COMMENT" schema="EMINENTTRACKER">
+        <id name="commentId" type="integer">
+            <column name="COMMENT_ID" precision="22" scale="0" />
+            <generator class="sequence">
+               <param name="sequence">COMMENT_ID_SEQ</param>
+            </generator>
+        </id>
+        <many-to-one name="ermAppraisal" class="com.eminentlabs.appraisal.ErmAppraisal" fetch="select">
+            <column name="APPRAISAL_ID" precision="22" scale="0" />
+        </many-to-one>
+        <property name="commentedBy" type="integer">
+            <column name="COMMENTED_BY" precision="22" scale="0" />
+        </property>
+        <property name="comments" type="string">
+            <column name="COMMENTS" length="2000" />
+        </property>
+        <property name="commentedTo" type="integer">
+            <column name="COMMENTED_TO" precision="22" scale="0" />
+        </property>
+        <property name="dueDate" type="date">
+            <column name="DUE_DATE" length="7" />
+        </property>
+        <property name="status" type="integer">
+            <column name="STATUS" precision="22" scale="0" />
+        </property>
+        <property name="commentedOn" type="timestamp">
+            <column name="COMMENTED_ON" length="7" />
+        </property>
+    </class>
+</hibernate-mapping>

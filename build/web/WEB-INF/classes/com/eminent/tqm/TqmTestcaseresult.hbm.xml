@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!--
+    Document   : TqmIssuetestcaseresult.hbm.xml
+    Created on : December 23, 2009, 9:53 AM
+    Author     : Administrator
+    Description: Test Case Results
+        
+-->
+<hibernate-mapping>
+  <class entity-name="testcaseresult" name="com.eminent.tqm.TqmTestcaseresult" table="TQM_ISSUETESTCASERESULT">
+    <id name="resultid" type="long">
+      <column length="10" name="RESULTID"/>
+      <generator class="sequence">
+        <param name="sequence">ISSUETESTCASERESULTID_SEQ</param>
+      </generator>
+    </id>
+    <many-to-one column="PTCID" entity-name="producttestcases" fetch="select" name="tqmptcm"/>
+    <many-to-one column="COMMENTEDBY" entity-name="users" fetch="select" name="commentedby"/>
+    <property name="issueid" type="string">
+      <column length="25" name="issueid"/>
+    </property>
+    <many-to-one column="STATUSID" entity-name="testcasestatus" fetch="select" name="tqmtestcasestatus"/>
+    <property name="testcomments" type="string">
+      <column length="2000" name="TESTCOMMENTS"/>
+    </property>
+    <property name="commentedon" type="timestamp">
+      <column length="6" name="commentedon"/>
+    </property>
+  </class>
+</hibernate-mapping>

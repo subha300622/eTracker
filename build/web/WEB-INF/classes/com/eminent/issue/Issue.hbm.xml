@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 12, 2009 11:06:40 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class entity-name="velan" name="com.eminent.issue.Issue" schema="EMINENTTRACKER" table="ISSUE">
+    <id name="issueid" type="string">
+      <column length="60" name="ISSUEID"/>
+      <generator class="assigned"/>
+    </id>
+    <many-to-one column="PID" entity-name="project" fetch="select" name="projectid"/>
+    <many-to-one column="MODULE_ID" entity-name="entitymodule" fetch="select" name="modules"/>
+    <property name="foundVersion" type="string">
+      <column length="60" name="FOUND_VERSION"/>
+    </property>
+    <property name="type" type="string">
+      <column length="80" name="TYPE"/>
+    </property>
+    <property name="severity" type="string">
+      <column length="60" name="SEVERITY"/>
+    </property>
+    <property name="priority" type="string">
+      <column length="60" name="PRIORITY"/>
+    </property>
+    <property name="subject" type="string">
+      <column length="200" name="SUBJECT"/>
+    </property>
+    <property name="description" type="string">
+      <column length="4000" name="DESCRIPTION"/>
+    </property>
+    <many-to-one column="CREATEDBY" entity-name="users" fetch="select" name="createdby"/>
+    <property name="modifiedon" type="date">
+      <column length="7" name="MODIFIEDON"/>
+    </property>
+    <many-to-one column="ASSIGNEDTO" entity-name="users" fetch="select" name="assignedto"/>
+    <property name="comment1" type="string">
+      <column length="2000" name="COMMENT1"/>
+    </property>
+    <property name="createdon" type="date">
+      <column length="7" name="CREATEDON"/>
+    </property>
+    <property name="rootcause" type="string">
+      <column length="200" name="ROOTCAUSE"/>
+    </property>
+    <property name="expectedResult" type="string">
+      <column length="2000" name="EXPECTED_RESULT"/>
+    </property>
+    <property name="dueDate" type="date">
+      <column length="7" name="DUE_DATE"/>
+    </property>
+    <property name="rating" type="string">
+      <column length="25" name="RATING"/>
+    </property>
+    <property name="feedback" type="string">
+      <column length="210" name="FEEDBACK"/>
+    </property>
+    <property name="issuestatus" type="string">
+      <column length="50" name="ISSUESTATUS"/>
+    </property>
+    <set inverse="true" lazy="false" name="issueUpgradations">
+      <key column="ISSUEID"/>
+      <one-to-many entity-name="issupgrd"/>
+    </set>
+    <set inverse="true" lazy="false" name="issuecommentses">
+      <key column="ISSUEID"/>
+      <one-to-many class="issuecomments"/>
+    </set>
+    <set inverse="true" lazy="false" name="fileattachs">
+      <key column="ISSUEID"/>
+      <one-to-many entity-name="fileattach"/>
+    </set>
+    <set inverse="true" lazy="false" name="issueSupports">
+      <key column="ISSUEID"/>
+      <one-to-many entity-name="issusup"/>
+    </set>
+    <set inverse="true" lazy="false" name="issueImplementations">
+      <key column="ISSUEID"/>
+      <one-to-many entity-name="issuimpl"/>
+    </set>
+  </class>
+</hibernate-mapping>

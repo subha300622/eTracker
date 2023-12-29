@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Nov 13, 2009 12:02:39 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class entity-name="usertimesheets" name="com.eminent.timesheet.Timesheet" schema="EMINENTTRACKER" table="TIMESHEET">
+    <id name="timesheetid" type="string">
+      <column length="25" name="TIMESHEETID"/>
+      <generator class="assigned"/>
+    </id>
+    <many-to-one column="OWNER" entity-name="users" fetch="select" name="users"/>
+    <property name="requestedon" type="timestamp">
+      <column length="7" name="REQUESTEDON"/>
+    </property>
+    <property name="assignedto" type="big_decimal">
+      <column name="ASSIGNEDTO" precision="22" scale="0"/>
+    </property>
+    <property name="approvalpercentage" type="big_decimal">
+      <column name="APPROVALPERCENTAGE" precision="22" scale="0"/>
+    </property>
+    <property name="approvalstatus" type="string">
+      <column length="25" name="APPROVALSTATUS"/>
+    </property>
+    <property name="approvedon" type="timestamp">
+      <column length="7" name="APPROVEDON"/>
+    </property>
+    <property name="feedback" type="string">
+      <column length="1000" name="FEEDBACK"/>
+    </property>
+    <property name="appreciation" type="string">
+      <column length="1000" name="APPRECIATION"/>
+    </property>
+    <property name="approvedby" type="big_decimal">
+      <column name="APPROVEDBY" precision="22" scale="0"/>
+    </property>
+    <property name="attendance" type="big_decimal">
+      <column name="ATTENDANCE" precision="22" scale="0"/>
+    </property>
+    <property name="workingdays" type="big_decimal">
+      <column name="WORKINGDAYS" precision="22" scale="0"/>
+    </property>
+    <property name="attendenceupdatedby" type="big_decimal">
+      <column name="ATTENDENCEUPDATEDBY" precision="22" scale="0"/>
+    </property>
+    <property name="attendenceupdatedon" type="timestamp">
+      <column length="7" name="ATTENDENCEUPDATEDON"/>
+    </property>
+    <property name="attendenceremark" type="string">
+      <column length="1000" name="ATTENDENCEREMARK"/>
+    </property>
+    <property name="accountstatus" type="string">
+      <column length="50" name="ACCOUNTSTATUS"/>
+    </property>
+    <property name="accountupdatedby" type="big_decimal">
+      <column name="ACCOUNTUPDATEDBY" precision="22" scale="0"/>
+    </property>
+    <property name="accountsremarks" type="string">
+      <column length="1000" name="ACCOUNTSREMARKS"/>
+    </property>
+    <property name="accountsupdatedon" type="timestamp">
+      <column length="7" name="ACCOUNTSUPDATEDON"/>
+    </property>
+    <property name="accomplishments" type="string">
+      <column length="1000" name="ACCOMPLISHMENTS"/>
+    </property>
+    <property name="learning" type="string">
+      <column length="2000" name="LEARNING"/>
+    </property>
+    <property name="hardship" type="string">
+      <column length="1500" name="HARDSHIP"/>
+    </property>
+    <property name="suggestion" type="string">
+      <column length="1500" name="SUGGESTION"/>
+    </property>
+    <property name="plan" type="string">
+      <column length="1500" name="PLAN"/>
+    </property>
+    <property name="appraisalEligibility" type="character">
+      <column length="1" name="APPRAISAL_ELIGIBILITY"/>
+    </property>
+     
+     <property name="hoursInOffice" type="big_decimal">
+      <column name="HOURS_IN_OFFICE" precision="22" scale="0"/>
+    </property>
+      <property name="hoursInMeeting" type="big_decimal">
+      <column name="HOURS_IN_MEETING" precision="22" scale="0"/>
+    </property>
+    
+     <property name="wonAccounts" type="string">
+      <column name="WON_ACCOUNTS" length="20"/>
+    </property>
+      <property name="metDecisionMaker" type="string">
+      <column name="MET_DECISION_MAKER" length="20"/>
+    </property>
+    
+     <property name="identityDecisionMaker" type="string">
+      <column name="IDENTITY_DECISION_MAKER" length="20"/>
+    </property>
+      <property name="metInfluencer" type="string">
+      <column name="MET_INFLUENCER" length="20"/>
+    </property>
+     <property name="identityInfluencer" type="string">
+      <column name="IDENTITY_INFLUENCER" length="20"/>
+    </property>
+    <set inverse="true" name="timesheetcommentses">
+      <key column="TIMESHEETID"/>
+      <one-to-many entity-name="sheetinfo"/>
+    </set>
+  </class>
+</hibernate-mapping>

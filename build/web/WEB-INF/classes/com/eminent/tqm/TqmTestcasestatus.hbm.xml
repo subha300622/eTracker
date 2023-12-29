@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 12, 2009 11:06:40 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping default-lazy="false">
+  <class entity-name="testcasestatus" name="com.eminent.tqm.TqmTestcasestatus" table="TQM_TESTCASESTATUS">
+    <id name="statusid" type="int">
+      <column length="4" name="STATUSID"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="status" type="string">
+      <column length="25" name="STATUS"/>
+    </property>
+  </class>
+</hibernate-mapping>

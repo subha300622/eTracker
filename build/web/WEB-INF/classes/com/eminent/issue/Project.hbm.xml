@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 12, 2009 11:06:40 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping default-lazy="false">
+  <class entity-name="project" name="com.eminent.issue.Project" schema="EMINENTTRACKER" table="PROJECT">
+    <id name="pid" type="big_decimal">
+      <column name="PID" precision="22" scale="0"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="version" type="string">
+      <column length="60" name="VERSION"/>
+    </property>
+    <property name="pname" type="string">
+      <column length="80" name="PNAME"/>
+    </property>
+    <property name="pmanager" type="string">
+      <column length="120" name="PMANAGER"/>
+    </property>
+    <property name="platform" type="string">
+      <column length="200" name="PLATFORM"/>
+    </property>
+    <property name="customer" type="string">
+      <column length="100" name="CUSTOMER"/>
+    </property>
+    <property name="category" type="string">
+      <column length="25" name="CATEGORY"/>
+    </property>
+    <property name="startdate" type="date">
+      <column length="7" name="STARTDATE"/>
+    </property>
+    <property name="enddate" type="date">
+      <column length="7" name="ENDDATE"/>
+    </property>
+    <property name="projectstatus" type="string">
+      <column length="30" name="STATUS"/>
+    </property>
+    <property name="totalhours" type="string">
+      <column length="10" name="TOTALHOURS"/>
+    </property>
+    <property name="phase" type="string">
+      <column length="50" name="PHASE"/>
+    </property>
+     <property name="showDetails" type="string">
+      <column length="10" name="ShowDetails"/>
+    </property>
+     <property name="projectDomain" type="string">
+      <column length="10" name="PROJECT_DOMAIN"/>
+    </property>
+    
+    <set inverse="true" lazy="false" name="moduleses">
+      <key column="PID"/>
+      <one-to-many entity-name="entitymodule"/>
+    </set>
+    <set inverse="true" lazy="false" name="issues">
+      <key column="PID"/>
+      <one-to-many entity-name="velan"/>
+    </set>
+  </class>
+</hibernate-mapping>

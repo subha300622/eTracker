@@ -1,0 +1,2 @@
+ALTER TABLE project
+  ADD SHOWDETAILS varchar2(10);

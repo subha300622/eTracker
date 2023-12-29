@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 12, 2009 11:06:40 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class entity-name="fileattach" name="com.eminent.issue.Fileattach" schema="EMINENTTRACKER" table="FILEATTACH">
+    <id name="fileid" type="big_decimal">
+      <column name="FILEID" precision="22" scale="0"/>
+      <generator class="assigned"/>
+    </id>
+    <many-to-one class="velan" column="issueid" fetch="select" name="issue"/>
+    <property name="filename" type="string">
+      <column length="400" name="FILENAME"/>
+    </property>
+    <property name="attacheddate" type="date">
+      <column length="7" name="ATTACHEDDATE"/>
+    </property>
+    <property name="owner" type="big_decimal">
+      <column name="OWNER" precision="22" scale="0"/>
+    </property>
+    <property name="issuestatus" type="string">
+      <column length="50" name="ISSUESTATUS"/>
+    </property>
+  </class>
+</hibernate-mapping>

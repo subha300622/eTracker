@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 16 Mar, 2010 7:45:06 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class entity-name="testcaseexecution" name="com.eminent.tqm.TqmTestcaseexecution" schema="EMINENTTRACKER" table="TQM_TESTCASEEXECUTION">
+    <id name="tceid" type="int">
+      <column name="TCEID" precision="6" scale="0"/>
+      <generator class="sequence">
+        <param name="sequence">TCEID_SEQ</param>
+      </generator>
+    </id>
+    <many-to-one column="TEPID" entity-name="executionplan" fetch="select" name="tqmTestcaseexecutionplan"/>
+    <many-to-one column="PTCID" entity-name="producttestcases" fetch="select" name="ptcid"/>
+    <many-to-one column="CREATEDBY" entity-name="users" fetch="select" name="createdby"/>
+    <many-to-one column="ASSIGNEDTO" entity-name="users" fetch="select" name="assignedto"/>
+    <property name="statusid" type="int">
+      <column length="11" name="STATUSID"/>
+    </property>
+    <property name="createdon" type="timestamp">
+      <column length="11" name="CREATEDON"/>
+    </property>
+    <property name="modifiedon" type="timestamp">
+      <column length="11" name="MODIFIEDON"/>
+    </property>
+    <property name="duedate" type="date">
+      <column length="7" name="DUEDATE"/>
+    </property>
+     <property name="testorder" type="int">
+      <column length="7" name="TESTCASE_ORDER"/>
+    </property>
+    <property name="issuereference" type="string">
+      <column length="7" name="ISSUEREFERENCE"/>
+    </property>
+
+<!--    <set inverse="true" name="tqmTestcaseexecutionresults">
+      <key column="TCEID"/>
+      <one-to-many entity-name="executionresult"/>
+    </set>
+    <set inverse="true" name="tqmPtcms">
+      <key column="PTCID"/>
+      <one-to-many entity-name="producttestcases"/>
+    </set>
+  -->
+  </class>
+</hibernate-mapping>

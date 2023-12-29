@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 17, 2011 10:34:45 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping default-lazy="false">
+    <class name="com.eminentlabs.appraisal.ErmAppraisalStatus" table="ERM_APPRAISAL_STATUS" schema="EMINENTTRACKER">
+        <id name="statusId" type="integer">
+            <column name="STATUS_ID" precision="22" scale="0" />
+            <generator class="assigned" />
+        </id>
+        <property name="status" type="string">
+            <column name="STATUS" length="50" />
+        </property>
+        <set name="ermAppraisals" inverse="true">
+            <key>
+                <column name="STATUS_ID" precision="22" scale="0" />
+            </key>
+            <one-to-many class="com.eminentlabs.appraisal.ErmAppraisal" />
+        </set>
+    </class>
+</hibernate-mapping>

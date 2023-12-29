@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 12, 2009 11:06:40 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class entity-name="issuecomments" name="com.eminent.issue.Issuecomments" schema="EMINENTTRACKER" table="ISSUECOMMENTS">
+    <id name="commentid" type="int">
+      <column name="COMMENTID" precision="6" scale="0"/>
+      <generator class="assigned"/>
+    </id>
+    <many-to-one column="ISSUEID" entity-name="velan" fetch="select" name="issue"/>
+    <property name="commentedby" type="string">
+      <column length="40" name="COMMENTEDBY"/>
+    </property>
+    <property name="commentDate" type="date">
+      <column length="7" name="COMMENT_DATE"/>
+    </property>
+    <property name="comments" type="string">
+      <column length="2000" name="COMMENTS" not-null="true"/>
+    </property>
+    <property name="status" type="string">
+      <column length="50" name="STATUS"/>
+    </property>
+    <property name="commentedto" type="string">
+      <column length="40" name="COMMENTEDTO"/>
+    </property>
+    <property name="duedate" type="date">
+      <column length="7" name="DUEDATE"/>
+    </property>
+    <property name="priority" type="string">
+      <column length="60" name="PRIORITY"/>
+    </property>
+    <property name="severity" type="string">
+      <column length="60" name="SEVERITY"/>
+    </property>
+  </class>
+</hibernate-mapping>

@@ -1,0 +1,50 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 6 Jul, 2016, 5:59:33 PM
+    Author     : Muthu
+*/
+.popupNotify {top: 260px;/* bottom: 100px; */left: 350px;/* right: 5px; */margin: auto;position: absolute;overflow: hidden;background-color: #FFFFFF;z-index: 150;display: none;text-shadow: 0 1px 0 #f3f3f3;height: 130px;width: 300px;border: 3px solid #E0ECFF;}
+.popupNotify h3 {background-color: #E8EEF7;margin: 0;color: black;padding: 8px 15px;padding: 10px;}
+
+.classname {
+    -moz-box-shadow:inset 0px 1px 0px 0px #018378;
+    -webkit-box-shadow:inset 0px 1px 0px 0px #018378;
+    box-shadow:inset 0px 1px 0px 0px #018378;
+    background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #144DE6), color-stop(1, #144DE6) );
+    background:-moz-linear-gradient( center top, #79bbff 5%, #378de5 100% );
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#79bbff', endColorstr='#378de5');
+    background-color:#144DE6;
+    -webkit-border-top-left-radius:0px;
+    -moz-border-radius-topleft:0px;
+    border-top-left-radius:0px;
+    -webkit-border-top-right-radius:0px;
+    -moz-border-radius-topright:0px;
+    border-top-right-radius:0px;
+    -webkit-border-bottom-right-radius:0px;
+    -moz-border-radius-bottomright:0px;
+    border-bottom-right-radius:0px;
+    -webkit-border-bottom-left-radius:0px;
+    -moz-border-radius-bottomleft:0px;
+    border-bottom-left-radius:0px;
+    text-indent:0;
+    border:1px solid #84bbf3;
+    display:inline-block;
+    color:#ffffff;
+    font-family:Verdana;
+    font-size:12px;
+    font-weight:bold;
+    font-style:normal;
+    height:30px;
+    width:70px;
+    text-decoration:none;
+    text-align:center;
+    text-shadow:1px 1px 0px #528ecc;
+    border-radius: 25px;
+
+}
+
+

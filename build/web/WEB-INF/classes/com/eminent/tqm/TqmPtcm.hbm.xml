@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 8, 2009 2:55:58 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping default-lazy="false">
+  <class entity-name="producttestcases" name="com.eminent.tqm.TqmPtcm" schema="EMINENTTRACKER" table="TQM_PTCM">
+    <id name="ptcid" type="string">
+      <column length="25" name="PTCID"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="ctcid" type="string">
+      <column length="25" name="CTCID"/>
+    </property>
+    <property name="pid" type="java.lang.Integer">
+      <column name="PID" precision="6" scale="0"/>
+    </property>
+    <property name="mid" type="java.lang.Integer">
+      <column name="MID" precision="6" scale="0"/>
+    </property>
+    <property name="functionality" type="string">
+      <column length="1000" name="FUNCTIONALITY"/>
+    </property>
+    <property name="description" type="string">
+      <column length="1000" name="DESCRIPTION"/>
+    </property>
+    <property name="expectedresult" type="string">
+      <column length="1000" name="EXPECTEDRESULT"/>
+    </property>
+    <property name="createdon" type="timestamp">
+      <column name="CREATEDON"/>
+    </property>
+    <property name="createdby" type="java.lang.Integer">
+      <column name="CREATEDBY" precision="6" scale="0"/>
+    </property>
+    <property name="modifiedon" type="timestamp">
+      <column name="MODIFIEDON"/>
+    </property>
+    <set inverse="true" name="tqmIssuetestcaseses">
+      <key column="PTCID"/>
+      <one-to-many entity-name="isstestcases"/>
+    </set>
+    <set inverse="true" name="tqmtestcaseresults">
+      <key column="PTCID"/>
+      <one-to-many entity-name="testcaseresult"/>
+    </set>
+    <set inverse="true" name="tqmtestcaseexecutions">
+      <key column="PTCID"/>
+      <one-to-many entity-name="testcaseexecution"/>
+    </set>
+  </class>
+</hibernate-mapping>

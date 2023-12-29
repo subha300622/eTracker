@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 8 Mar, 2010 5:27:41 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping default-lazy="false">
+  <class entity-name="commontcm" name="com.eminent.tqm.TqmCtcm" schema="EMINENTTRACKER" table="TQM_CTCM">
+    <id name="ctcid" type="string">
+      <column length="25" name="CTCID"/>
+      <generator class="assigned"/>
+    </id>
+    <property name="ptcid" type="string">
+      <column length="25" name="PTCID"/>
+    </property>
+    <property name="functionality" type="string">
+      <column length="1000" name="FUNCTIONALITY"/>
+    </property>
+    <property name="description" type="string">
+      <column length="1000" name="DESCRIPTION"/>
+    </property>
+    <property name="expectedresult" type="string">
+      <column length="1000" name="EXPECTEDRESULT"/>
+    </property>
+    <property name="createdon" type="timestamp">
+      <column length="11" name="CREATEDON"/>
+    </property>
+    <property name="createdby" type="java.lang.Integer">
+      <column name="CREATEDBY" precision="6" scale="0"/>
+    </property>
+    <property name="approvedby" type="java.lang.Integer">
+      <column name="APPROVEDBY" precision="6" scale="0"/>
+    </property>
+    <property name="modifiedon" type="timestamp">
+      <column length="11" name="MODIFIEDON"/>
+    </property>
+  </class>
+</hibernate-mapping>

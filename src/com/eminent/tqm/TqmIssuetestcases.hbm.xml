@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 8, 2009 2:55:58 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping default-lazy="false">
+  <class entity-name="isstestcases" name="com.eminent.tqm.TqmIssuetestcases" schema="EMINENTTRACKER" table="TQM_ISSUETESTCASES">
+    <id name="id" type="long">
+      <column name="ID" precision="10" scale="0"/>
+      <generator class="sequence">
+        <param name="sequence">ID_SEQ</param>
+      </generator>
+    </id>
+    <many-to-one column="PTCID" entity-name="producttestcases" fetch="select" name="tqmPtcm"/>
+    <many-to-one column="STATUSID" entity-name="testcasestatus" fetch="select" name="tqmtestcasestatus"/>
+    <property name="issueid" type="string">
+      <column length="25" name="ISSUEID"/>
+    </property>
+  </class>
+</hibernate-mapping>

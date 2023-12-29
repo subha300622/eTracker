@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+  <class entity-name="moduleplan" name="com.eminent.tqm.TqmModuleplan" table="TQM_MODULEPLAN">
+    <id name="mpid" type="int">
+      <column name="MPID" precision="6" scale="0"/>
+      <generator class="sequence">
+        <param name="sequence">MPID_SEQ</param>
+      </generator>
+    </id>
+    <many-to-one column="TEPID" entity-name="executionplan" fetch="select" name="tepid" not-null="true"/>
+    <property name="mid" type="int">
+      <column length="6" name="mid"/>
+    </property>
+  </class>
+</hibernate-mapping>

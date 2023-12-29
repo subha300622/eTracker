@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 12, 2009 11:06:40 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+  <class entity-name="issusup" name="com.eminent.issue.IssueSupport" schema="EMINENTTRACKER" table="ISSUE_SUPPORT">
+    <id name="issueid" type="string">
+      <column length="60" name="ISSUEID"/>
+      <generator class="assigned"/>
+    </id>
+    <many-to-one column="ISSUEID" entity-name="velan" fetch="select" insert="false" name="issue" update="false"/>
+    <property name="projecttype" type="string">
+      <column length="15" name="PROJECTTYPE"/>
+    </property>
+    <property name="phase" type="string">
+      <column length="40" name="PHASE"/>
+    </property>
+    <property name="subphase" type="string">
+      <column length="70" name="SUBPHASE"/>
+    </property>
+    <property name="subsubphase" type="string">
+      <column length="40" name="SUBSUBPHASE"/>
+    </property>
+    <property name="subsubsubphase" type="string">
+      <column length="40" name="SUBSUBSUBPHASE"/>
+    </property>
+  </class>
+</hibernate-mapping>

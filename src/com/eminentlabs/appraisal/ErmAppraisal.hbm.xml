@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Dec 17, 2011 10:34:45 AM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.eminentlabs.appraisal.ErmAppraisal" table="ERM_APPRAISAL" schema="EMINENTTRACKER">
+        <id name="appraisalId" type="integer">
+            <column name="APPRAISAL_ID" precision="22" scale="0" />
+            <generator class="sequence">
+               <param name="sequence">APPRAISAL_ID_SEQ</param>
+            </generator>
+        </id>
+        <many-to-one name="ermAppraisalStatus" class="com.eminentlabs.appraisal.ErmAppraisalStatus" fetch="select">
+            <column name="STATUS_ID" precision="22" scale="0" />
+        </many-to-one>
+        <property name="empId" type="string">
+            <column name="EMP_ID" length="10" />
+        </property>
+        <property name="appraisalUser" type="integer">
+            <column name="APPRAISAL_USER" precision="22" scale="0" />
+        </property>
+        <property name="period" type="string">
+            <column name="PERIOD" length="20" />
+        </property>
+        <property name="firstAppraiser" type="integer">
+            <column name="FIRST_APPRAISER" precision="22" scale="0" />
+        </property>
+        <property name="secondAppraiser" type="integer">
+            <column name="SECOND_APPRAISER" precision="22" scale="0" />
+        </property>
+        <property name="thirdAppraiser" type="integer">
+            <column name="THIRD_APPRAISER" precision="22" scale="0" />
+        </property>
+        <property name="initiatedBy" type="integer">
+            <column name="INITIATED_BY" precision="22" scale="0" />
+        </property>
+        <property name="assignedto" type="integer">
+            <column name="ASSIGNEDTO" precision="22" scale="0" />
+        </property>
+        <property name="duedate" type="date">
+            <column name="DUEDATE" length="7" />
+        </property>
+        <property name="createdon" type="timestamp">
+            <column name="CREATEDON" length="7" />
+        </property>
+        <property name="updatedon" type="timestamp">
+            <column name="UPDATEDON" length="7" />
+        </property>
+        <property name="createdIssuesComment" type="string">
+            <column name="CREATED_ISSUES_COMMENT" length="2000" />
+        </property>
+        <property name="workedIssuesComment" type="string">
+            <column name="WORKED_ISSUES_COMMENT" length="2000" />
+        </property>
+        <property name="closedIssuesComment" type="string">
+            <column name="CLOSED_ISSUES_COMMENT" length="2000" />
+        </property>
+        <property name="newLearningsComment" type="string">
+            <column name="NEW_LEARNINGS_COMMENT" length="2000" />
+        </property>
+        <property name="attendanceComments" type="string">
+            <column name="ATTENDANCE_COMMENTS" length="2000" />
+        </property>
+        <property name="approvalPercentage" type="string">
+            <column name="APPROVAL_PERCENTAGE" length="2000" />
+        </property>
+        <property name="approvalStatus" type="string">
+            <column name="APPROVAL_STATUS" length="5" />
+        </property>
+        <property name="systemAppraisalPercentage" type="integer">
+            <column name="SYSTEM_APPRAISAL_PERCENTAGE" precision="22" scale="0" />
+        </property>
+        <property name="userAppraisalPercentage" type="integer">
+            <column name="USER_APPRAISAL_PERCENTAGE" precision="22" scale="0" />
+        </property>
+        <set name="ermAppraisalComments" inverse="true">
+            <key>
+                <column name="APPRAISAL_ID" precision="22" scale="0" />
+            </key>
+            <one-to-many class="com.eminentlabs.appraisal.ErmAppraisalComment" />
+        </set>
+       
+    </class>
+</hibernate-mapping>

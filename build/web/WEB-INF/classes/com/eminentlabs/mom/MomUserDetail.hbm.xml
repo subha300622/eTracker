@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Jan 10, 2013 10:12:52 PM by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="com.eminentlabs.mom.MomUserDetail" table="MOM_USER_DETAIL" schema="EMINENTTRACKER">
+        <id name="momuserdetailid" type="integer">
+            <column name="MOMUSERDETAILID" length="25" />
+             
+        </id>
+            
+        <property name="userid" type="integer">
+            <column name="USERID" precision="22" scale="0" />
+        </property>
+        <property name="momdate" type="date">
+            <column name="MOMDATE" length="7" not-null="true" />
+        </property>
+        <property name="status" type="string">
+            <column name="STATUS" length="100" not-null="true" />
+        </property>
+        <property name="createdby" type="integer">
+            <column name="CREATEDBY" precision="22" scale="0" />
+        </property>
+        <property name="createdon" type="timestamp">
+            <column name="CREATEDON" length="11" />
+        </property>
+        <property name="modifiedon" type="timestamp">
+            <column name="MODIFIEDON" length="11" />
+        </property>
+        <property name="momtime" type="string">
+            <column name="MOMTIME" length="100" not-null="true" />
+        </property>
+        <property name="comment" type="string">
+            <column name="MOMCOMMENT" length="100" />
+        </property>
+    </class>
+</hibernate-mapping>
